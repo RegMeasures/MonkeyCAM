@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Monkeycam by mikemag</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Monkeycam</h1>
+        <h2>CAD/CAM software for ski and snowboard design and G-code program generation</h2>
+        <a href="https://github.com/mikemag/MonkeyCAM" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="monkeycam-v40" class="anchor" href="#monkeycam-v40"><span class="octicon octicon-link"></span></a>MonkeyCAM v4.0</h1>
+
+<p>MonkeyCAM v4.0 is an open source CAD/CAM program for designing skis
+and snowboards, and generating
+<a href="http://en.wikipedia.org/wiki/G-code">G-code</a> programs to cut board
+parts with a <a href="http://en.wikipedia.org/wiki/Numerical_control">CNC
+machine</a>.</p>
+
+<p>The <a href="http://en.wikipedia.org/wiki/Computer-aided_design">CAD</a> portion
+of MonkeyCAM is quite limited, and is specifically designed to aid the
+design of skis and snowboards only. The
+<a href="http://en.wikipedia.org/wiki/Computer-aided_manufacturing">CAM</a>
+portion is slightly more general, but again is specialized to ski and
+snowboard manufacture.</p>
+
+<p>MonkeyCAM is published on Github at <a href="https://github.com/mikemag/MonkeyCAM">https://github.com/mikemag/MonkeyCAM</a></p>
+
+<p>More information about ski and snowboard construction can be found at
+<a href="http://www.happymonkeysnowboards.com/MonkeyWiki">Monkey Wiki</a> and
+<a href="http://www.skibuilders.com/">SkiBuilders.com</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MonkeyCAM is licensed under the Apache License, Version 2.0 except as
+otherwise noted. See
+<a href="https://github.com/mikemag/MonkeyCAM/blob/master/LICENSE">LICENSE</a>
+for details.</p>
+
+<p>The G-code programs <strong>generated</strong> by MonkeyCAM are license-free.</p>
+
+<h3>
+<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h3>
+
+<p>I am providing code in this repository to you under an open source
+license. Because this is my personal repository, the license you
+receive to my code is from me and not from my employer (Facebook).</p>
+
+<h2>
+<a name="current-release" class="anchor" href="#current-release"><span class="octicon octicon-link"></span></a>Current Release</h2>
+
+<p>See the <a href="https://github.com/mikemag/MonkeyCAM/releases">Releases page</a> for the current release, which includes release notes and links to download binaries.</p>
+
+<p>At this time there are only Mac OSX binaries, sorry! <a href="https://github.com/mikemag/MonkeyCAM/issues/4">That will change soon</a>. </p>
+
+<h2>
+<a name="features-and-current-status" class="anchor" href="#features-and-current-status"><span class="octicon octicon-link"></span></a>Features and Current Status</h2>
+
+<p>MonkeyCAM is currently a command-line program only. The program takes configuration files to
+describe the ski or snowboard shape via a small set of parameters and
+generates the following G-code programs:</p>
+
+<ul>
+<li>Base cutout</li>
+<li>Core:
+
+<ul>
+<li>Guide holes to allow the core to be removed and flipped between programs</li>
+<li>Alignment marks to transfer key design points to the bottom of the core</li>
+<li>Edge relief to leave room for steel edges</li>
+<li>Insert holes for standard snowboard inserts (T-nuts) in a variety of patterns</li>
+<li>Top profile to impart the taper to the core</li>
+<li>Cutout, allowing for sidewall overhang and nose/tail spacers</li>
+</ul>
+</li>
+<li>Nose and tail spacers which match the core</li>
+<li>Edge trenches to enable inlay of different edge wood and/or sidewall
+material along the effective edge of the core</li>
+</ul><p>The G-code programs emitted at this time have been tested on my CNC
+machine with a very old DeskCNC controller and work correctly. Each
+program also loads in Mach 3 and simulates correctly. The programs not
+involving holes load in ShopBot's controller and simulate correctly,
+but the ones with holes do not work for ShopBot right now.</p>
+
+<p>There is no UI, and all configuration and results are in files.</p>
+
+<p>You can see a sample set of programs here: <a href="http://www.happymonkeysnowboards.com/MonkeyCAM/path-viewer.html">MonkeyCAM Visualization
+Example</a></p>
+
+<h2>
+<a name="future-work" class="anchor" href="#future-work"><span class="octicon octicon-link"></span></a>Future Work</h2>
+
+<p>MonkeyCAM v4.0 is a work in-progress. It is an incomplete (~50% so
+far) port of MonkeyCAM, developed by <a href="https://github.com/mikemag">Mike
+Magruder</a> for <a href="http://www.happymonkeysnowboards.com/">Happy Monkey Snowboards,
+Inc.</a> from 2003 to 2012. The
+valuable parts of the MonkeyCAM v3 backend (shape and G-code
+generation) will be ported to this version over the next many
+months. The old UI will be discarded. The plan includes, roughly in
+order:</p>
+
+<ul>
+<li>Target more G-code controllers with different formats and requirements.</li>
+<li>Provide distribution of binaries for Mac OSX and Windows 8.</li>
+<li>More options for effective edge, nose, and tail. (MonkeyCAM v3, for
+instance, had 6 tail options.)</li>
+<li>Port the code to soften the transition between edge and
+nose/tail. (You can work around this with a sandblock and two min of
+your time for now.)</li>
+<li>Port the MonkeyCAM design UI to a web-based UI built on HTML 5, and
+enable local execution.
+
+<ul>
+<li>The UI will include easy controls for inputting the shape
+parameters, plus live visualization of the overall shape, profile,
+insert placement, etc. It also includes specifying the machining
+parameters. Right now I'm thinking about a combination of React and
+three.js.</li>
+</ul>
+</li>
+<li>Port the MonkeyCAM G-code validation UI, built on the same framework
+as the design UI.
+
+<ul>
+<li>This includes import of the G-code programs output from MonkeyCAM,
+as well as pretty much any G-code program, visualization of the
+tool path, overlay of multiple programs together for validation,
+and stepping through G-code programs to better understand how the
+cutter will move.</li>
+</ul>
+</li>
+<li>Host MonkeyCAM on servers in something like AWS or Google Apps;
+serve the UI while running the engine on the server, provide local
+storage for board configurations.</li>
+<li>Read the overall board shape from other CAD programs (DXF at least).</li>
+<li>Output the overall shape, insert locations, etc. to PDF/DXF for
+printing or use in other CAD programs.</li>
+<li>Mold design and program to cut molds.</li>
+<li>Rouging passes for the core profile.</li>
+<li>Adapt for other kinds of 'boards': kite boards, skate boards, etc.</li>
+</ul><p>Why not just open source MonkeyCAM v3? Honestly, the code for my
+personal version of MonkeyCAM has grown rather organically over almost
+10 years and three major revisions. It is a huge mess of C#, WinForms,
+and Managed DirectX, and I'd really prefer no one but me ever sees
+that code again. :)</p>
+
+<h2>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>MonkeyCAM currently depends on the following packages:</p>
+
+<ul>
+<li>Currently, builds on Mac OSX 10.9.4 Mavericks with the system compiler, Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn).</li>
+<li>CMake 3.0.0. See <a href="http://www.cmake.org/">http://www.cmake.org/</a> or install via something like Ports.</li>
+<li>Boost 1.55.0. See <a href="http://www.boost.org/">http://www.boost.org/</a> or install via something like Ports.</li>
+<li>Clipper 5.1.6. See
+<a href="http://sourceforge.net/projects/polyclipping/">http://sourceforge.net/projects/polyclipping/</a>. The CMake files
+assume this is installed in a sibling directory with the top-level
+MonkeyCAM directory, named clipper_ver5.1.6.</li>
+<li>Up thru 953fe71b, GCC 4.8.1. See <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a> or install via
+something like Ports. I'll ressurect the GCC build once I start
+deploying on AWS.</li>
+</ul><h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>If you're a software developer who is into ski and snowboard
+construction or CAM and you're interested in helping out on MonkeyCAM
+then let's chat. Open up an issue with what you want to work on and
+we'll work out the details there, or fork the repo, make some changes
+and put up a pull request!</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/mikemag/MonkeyCAM/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mikemag/MonkeyCAM/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/mikemag/MonkeyCAM"></a> is maintained by <a href="https://github.com/mikemag">mikemag</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
