@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
     <title>Monkeycam by mikemag</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Monkeycam</h1>
-        <h2>CAD/CAM software for ski and snowboard design and G-code program generation</h2>
-        <a href="https://github.com/mikemag/MonkeyCAM" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Monkeycam</h1>
+      <h2 class="project-tagline">CAD/CAM software for ski and snowboard design and G-code program generation</h2>
+      <a href="https://github.com/mikemag/MonkeyCAM" class="btn">View on GitHub</a>
+      <a href="https://github.com/mikemag/MonkeyCAM/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mikemag/MonkeyCAM/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="monkeycam-v40" class="anchor" href="#monkeycam-v40"><span class="octicon octicon-link"></span></a>MonkeyCAM v4.0</h1>
+    <section class="main-content">
+      <h1>
+<a id="monkeycam-v40" class="anchor" href="#monkeycam-v40" aria-hidden="true"><span class="octicon octicon-link"></span></a>MonkeyCAM v4.0</h1>
 
 <p>MonkeyCAM v4.0 is an open source CAD/CAM program for designing skis
 and snowboards, and generating
@@ -51,7 +42,7 @@ snowboard manufacture.</p>
 <a href="http://www.skibuilders.com/">SkiBuilders.com</a>.</p>
 
 <h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>MonkeyCAM is licensed under the Apache License, Version 2.0 except as
 otherwise noted. See
@@ -61,21 +52,21 @@ for details.</p>
 <p>The G-code programs <strong>generated</strong> by MonkeyCAM are license-free.</p>
 
 <h3>
-<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h3>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disclaimer</h3>
 
 <p>I am providing code in this repository to you under an open source
 license. Because this is my personal repository, the license you
 receive to my code is from me and not from my employer (Facebook).</p>
 
 <h2>
-<a name="current-release" class="anchor" href="#current-release"><span class="octicon octicon-link"></span></a>Current Release</h2>
+<a id="current-release" class="anchor" href="#current-release" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current Release</h2>
 
 <p>See the <a href="https://github.com/mikemag/MonkeyCAM/releases">Releases page</a> for the current release, which includes release notes and links to download binaries.</p>
 
 <p>At this time there are only Mac OSX binaries, sorry! <a href="https://github.com/mikemag/MonkeyCAM/issues/4">That will change soon</a>. </p>
 
 <h2>
-<a name="features-and-current-status" class="anchor" href="#features-and-current-status"><span class="octicon octicon-link"></span></a>Features and Current Status</h2>
+<a id="features-and-current-status" class="anchor" href="#features-and-current-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features and Current Status</h2>
 
 <p>MonkeyCAM is currently a command-line program only. The program takes configuration files to
 describe the ski or snowboard shape via a small set of parameters and
@@ -97,7 +88,9 @@ generates the following G-code programs:</p>
 <li>Nose and tail spacers which match the core</li>
 <li>Edge trenches to enable inlay of different edge wood and/or sidewall
 material along the effective edge of the core</li>
-</ul><p>The G-code programs emitted at this time have been tested on my CNC
+</ul>
+
+<p>The G-code programs emitted at this time have been tested on my CNC
 machine with a very old DeskCNC controller and work correctly. Each
 program also loads in Mach 3 and simulates correctly. The programs not
 involving holes load in ShopBot's controller and simulate correctly,
@@ -109,7 +102,7 @@ but the ones with holes do not work for ShopBot right now.</p>
 Example</a></p>
 
 <h2>
-<a name="future-work" class="anchor" href="#future-work"><span class="octicon octicon-link"></span></a>Future Work</h2>
+<a id="future-work" class="anchor" href="#future-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future Work</h2>
 
 <p>MonkeyCAM v4.0 is a work in-progress. It is an incomplete (~50% so
 far) port of MonkeyCAM, developed by <a href="https://github.com/mikemag">Mike
@@ -159,14 +152,16 @@ printing or use in other CAD programs.</li>
 <li>Mold design and program to cut molds.</li>
 <li>Rouging passes for the core profile.</li>
 <li>Adapt for other kinds of 'boards': kite boards, skate boards, etc.</li>
-</ul><p>Why not just open source MonkeyCAM v3? Honestly, the code for my
+</ul>
+
+<p>Why not just open source MonkeyCAM v3? Honestly, the code for my
 personal version of MonkeyCAM has grown rather organically over almost
 10 years and three major revisions. It is a huge mess of C#, WinForms,
 and Managed DirectX, and I'd really prefer no one but me ever sees
 that code again. :)</p>
 
 <h2>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
 
 <p>MonkeyCAM currently depends on the following packages:</p>
 
@@ -181,32 +176,24 @@ MonkeyCAM directory, named clipper_ver5.1.6.</li>
 <li>Up thru 953fe71b, GCC 4.8.1. See <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a> or install via
 something like Ports. I'll ressurect the GCC build once I start
 deploying on AWS.</li>
-</ul><h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>If you're a software developer who is into ski and snowboard
 construction or CAM and you're interested in helping out on MonkeyCAM
 then let's chat. Open up an issue with what you want to work on and
 we'll work out the details there, or fork the repo, make some changes
 and put up a pull request!</p>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/mikemag/MonkeyCAM/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/mikemag/MonkeyCAM/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mikemag/MonkeyCAM">Monkeycam</a> is maintained by <a href="https://github.com/mikemag">mikemag</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/mikemag/MonkeyCAM"></a> is maintained by <a href="https://github.com/mikemag">mikemag</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
   
   </body>
